@@ -9,13 +9,26 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
+    function updateColor(){
+        win.color = Qt.rgba(Math.random(), Math.random(), Math.random())
+    }
+
     Button {
         id: button1
         text: "Click me"
         anchors.centerIn: parent
 
         onClicked: {
-            win.color = Qt.rgba(Math.random(), Math.random(), Math.random())
+            updateColor()
+        }
+    }
+
+    RoundButton {
+        id: root
+        text: "Click me"
+
+        onClicked: {
+            updateColor()
         }
     }
 }
